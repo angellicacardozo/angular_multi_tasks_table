@@ -1,0 +1,115 @@
+body,
+html {
+  background-color: #f4e1db;
+}
+table {
+  border-color: #998d89;
+}
+table th {
+  background-color: #d6c6c0;
+  border-bottom-color: #998d89;
+}
+table td {
+  border-color: #ffffff;
+}
+/* Row color state */
+.running + .full-information-block td {
+  background-color: #96c0de;
+  color: #3c4d59;
+}
+.running td {
+  background-color: #96c0de;
+  color: #3c4d59;
+}
+.pending + .full-information-block td {
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, 0.87);
+}
+.pending td {
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, 0.87);
+}
+.pending + .full-information-block td {
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, 0.87);
+}
+.pending td {
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, 0.87);
+}
+.rejected + .full-information-block td {
+  background-color: #a44c28;
+  color: #ffffff;
+}
+.rejected + .full-information-block td > div {
+  color: #1a1a1a;
+}
+.rejected td {
+  background-color: #a44c28;
+  color: #ffffff;
+}
+.complete + .full-information-block td {
+  background-color: #96c001;
+  color: #173602;
+}
+.complete td {
+  background-color: #96c001;
+  color: #173602;
+}
+.accepted + .full-information-block td {
+  background-color: #96c001;
+  color: #173602;
+}
+.accepted td {
+  background-color: #96c001;
+  color: #173602;
+}
+/* Icons */
+.firewall {
+  background-image: url("icons/shield.png");
+  background-position: 10px center;
+  background-repeat: no-repeat;
+}
+.build {
+  background-image: url("icons/server.png");
+  background-position: 10px center;
+  background-repeat: no-repeat;
+}
+/* Full information datils */
+.full-information-block > div {
+  color: #000000;
+}
+.full-information-block .consolidated-results > span {
+  color: #000000;
+}
+.full-information-block .consolidated-results a {
+  background-color: #5870cf;
+  color: #fff;
+}
+.full-information-block .definition-table td {
+  background-color: #fff;
+  color: #000000;
+}
+.full-information-block .definition-table td.increase {
+  color: #7cb205;
+}
+.full-information-block .definition-table td.decrease {
+  color: #a44c28;
+}
+.full-information-block .definition-table td.kept {
+  color: #5870cf;
+}
+.full-information-block td div {
+  background-color: #fff;
+  border: 1px solid #998d89;
+}
+.full-information-block td div h3 {
+  border-color: #fff;
+  background-color: #d6c6c0;
+}
+.consolidated-results.accepted > span {
+  color: #e38d3a;
+}
+.consolidated-results.rejected > span {
+  color: #c71c24;
+}

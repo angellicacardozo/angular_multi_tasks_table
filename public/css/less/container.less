@@ -1,0 +1,174 @@
+/* -------------- Element style -------------- */
+
+.cell-head-padding {
+	padding: 0.928571em 0.714286em;
+}
+
+.cell-icon-padding {
+	padding-left: 45px;	
+}
+
+.horizontal-center {
+	margin:0 auto;
+}
+
+.cell-row-padding {
+	padding: 0.714286em;
+}
+
+.reset {
+	border: 0 none;
+    margin: 0;
+    min-height: auto;
+    padding: 0;
+    width: 100%;
+}
+
+.border-radius(@radius) {
+  -webkit-border-radius: @arguments;
+     -moz-border-radius: @arguments;
+          border-radius: @arguments;
+}
+
+.rounded-corner {
+	.border-radius(0.285714rem 0 0);
+	border-collapse: separate;
+    border-spacing: 0;
+}
+
+select {
+	width: 100%
+}
+
+table {
+	border-width: 1px;
+	border-style: solid;
+	border-spacing: 0;
+	width: 90%;
+	.horizontal-center;
+	.rounded-corner;
+}
+
+table {
+	thead {
+		tr:first-child > th:first-child {
+			.rounded-corner;
+			border-left: medium none;
+		}
+	}
+
+	th {
+		.cell-head-padding;
+		border-bottom-width: 1px;
+		border-bottom-style: solid;
+	}
+
+	td {
+		border-top-width: 1px;
+		border-top-style: solid;
+		.cell-row-padding;
+	}
+}
+
+.full-information-fade td:first-child {
+	 width: 25%
+}
+
+a.open-full-information{
+    cursor: pointer;
+}
+
+.firewall, .build {
+	.cell-icon-padding ;
+}
+
+/* Full information details */
+
+.full-information-block {
+	th {
+		border: none;
+		width: 30%;
+	}
+
+	td {
+		padding-left: 8px;
+		border: none;
+
+		div {
+			height: 100%;
+			overflow: hidden;
+			padding: 0 10px 10px;
+			width: 15%;
+			margin: 5px;
+    		min-height: 295px;
+    		float: left;
+
+    		h3 {
+    			margin: 0 -10px 15px;
+    			padding: 5px;
+    			border-width: 1px;
+    			border-style: solid;
+    		}
+		}
+
+		.metrics-clock {
+		 	width: 22%;
+		}
+	} 
+}
+
+.full-information-block > td {
+	border-top: medium none;
+    padding-left: 45px;
+}
+
+/* Chart block */
+.full-information-block td .chart-block,
+.full-information-block td .progress-bar-wrapper,
+.full-information-block td .progress-bar-wrapper .progress-bar  {
+	.reset;
+}
+
+/* Result block */
+.full-information-block {
+	td {
+		.result-cointainer {
+			div {
+				.reset;
+			}
+		}
+	}
+}
+
+.consolidated-results {
+	>span {
+    	display: block;
+   		text-align: center;
+	}
+
+	a {
+		padding: 8px 8px 8px 38px;
+		display: block;
+	}
+}
+
+.build-box {
+	span {
+	    float: right;
+	    margin-right: 35px;
+	    margin-top: 16px;
+	}
+}
+
+.chart-block {
+	.wrapper {
+		text-align: center;
+	}
+	img {
+		margin-top: 8px;
+		margin-bottom: 8px;
+	}
+}
+.textual-chart-info {
+	display: block;
+}

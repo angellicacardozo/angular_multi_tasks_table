@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="taskModule">
+	<head></head>
+
+        <link href='https://fonts.googleapis.com/css?family=Roboto&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" type="text/css" href="css/font.css">
+        <link rel="stylesheet" type="text/css" href="css/container.css">
+        <link rel="stylesheet" type="text/css" href="css/container-color.css">
+        <link rel="stylesheet" type="text/css" href="css/progress-bar.css">
+
+	<body ng-controller="TasksController">
+		<h1>Welcome to GCTasks App!</h1>
+
+		<div ng-view></div>
+
+        <script src="scripts/lib/jquery-2.1.4.min.js"></script>
+        <script src="scripts/lib/angular.min.js"></script>
+        <script src="scripts/lib/angular-route.min.js"></script>
+        <script src="scripts/lib/angular-resource.min.js"></script>
+        <script src="scripts/lib/angular-animate.min.js"></script>
+
+        <script type="text/javascript">
+                jQuery.noConflict();
+        </script>
+
+        <script src="scripts/tasks/directives/task-directives.js"></script>
+        <script src="scripts/tasks/directives/result-container.js"></script>
+        <script src="scripts/tasks/directives/metrics-detail-container.js"></script>
+	<script src="scripts/tasks/directives/progress-bar.js"></script>
+        <script src="scripts/tasks/directives/chart-block.js"></script>
+	<script src="scripts/task-module.js"></script>
+        <script src="scripts/tasks/controllers/tasks-controller.js"></script>
+        <script src="scripts/tasks/animation/full-information-fade.js"></script>
+	</body>
+</html>

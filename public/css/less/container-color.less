@@ -1,0 +1,177 @@
+@light-pink: #f4e1db;
+@default-font-color: #000;
+
+@border-color-1: #998d89;
+@cell-head-bg-color: #d6c6c0;
+@cell-row-border-color: #fff;
+
+@running-state-bg-color: #96c0de;
+@running-state-font-color: #3c4d59;
+@pending-state-bg-color: #fff;
+@pending-state-font-color: rgba(0, 0, 0, 0.87);
+@rejected-state-bg-color: #a44c28;
+@rejected-state-font-color: #ffffff;
+@complete-state-bg-color: #96c001;
+@complete-state-font-color: #173602;
+@accepted-state-bg-color: #96c001;
+@accepted-state-font-color: #173602;
+
+body, html {
+	background-color: @light-pink;
+}
+
+table {
+	border-color: @border-color-1;
+
+	th {
+		background-color: @cell-head-bg-color;
+		border-bottom-color: @border-color-1;
+	}
+
+	td {
+		border-color: @cell-row-border-color;
+	}
+}
+
+/* Row color state */
+.running + .full-information-block  {
+	td {
+	    background-color: @running-state-bg-color;
+	    color: @running-state-font-color;
+	}
+}
+.running td {
+    background-color: @running-state-bg-color;
+    color: @running-state-font-color;
+}
+
+.pending + .full-information-block  {
+	td {
+	    background-color: @pending-state-bg-color;
+	    color: @pending-state-font-color;
+	}
+}
+.pending td {
+	background-color: @pending-state-bg-color;
+	color: @pending-state-font-color;
+}
+
+.pending + .full-information-block  {
+	td {
+	    background-color: @pending-state-bg-color;
+	    color: @pending-state-font-color;
+	}
+}
+.pending td {
+	background-color: @pending-state-bg-color;
+	color: @pending-state-font-color;
+}
+
+.rejected + .full-information-block  {
+	td {
+	    background-color: @rejected-state-bg-color;
+	    color: @rejected-state-font-color;
+
+	    >div {
+			color: #1a1a1a;
+		}
+	}
+}
+.rejected td {
+	background-color: @rejected-state-bg-color;
+	color: @rejected-state-font-color;
+}
+
+.complete + .full-information-block  {
+	td {
+	    background-color: @complete-state-bg-color;
+	    color: @complete-state-font-color;
+	}
+}
+.complete td {
+	background-color: @complete-state-bg-color;
+	color: @complete-state-font-color;
+}
+
+.accepted + .full-information-block  {
+	td {
+	    background-color: @accepted-state-bg-color;
+	    color: @accepted-state-font-color;
+	}
+}
+.accepted td {
+	background-color: @accepted-state-bg-color;
+	color: @accepted-state-font-color;
+}
+
+/* Icons */
+.firewall {
+    background-image: url("icons/shield.png");
+    background-position: 10px center;
+    background-repeat: no-repeat;
+}
+
+.build {
+    background-image: url("icons/server.png");
+    background-position: 10px center;
+    background-repeat: no-repeat;
+}
+
+/* Full information datils */
+
+.full-information-block {
+
+	>div {
+		color: @default-font-color;	
+	}
+
+	.consolidated-results {
+		>span {
+	    	color: @default-font-color;	
+		}
+
+		a {
+    		background-color: #5870cf;
+    		color: #fff;
+		}
+	}
+
+	.definition-table {
+		td {
+			background-color: #fff;
+			color: @default-font-color;	
+		}
+
+		td.increase {
+			color: #7cb205;
+		}
+
+		td.decrease {
+			color: #a44c28;
+		}
+
+		td.kept {
+			color: #5870cf;
+		}
+	}
+
+	td {		
+		div {
+		    background-color: #fff;
+		    border: 1px solid #998d89;
+
+		    h3 {
+			    border-color: #fff;
+			    background-color: #d6c6c0;
+		    }
+		}
+	}
+}
+
+.consolidated-results.accepted > span {
+	color: #e38d3a;
+}
+
+.consolidated-results.rejected > span {
+	color: #c71c24
+}

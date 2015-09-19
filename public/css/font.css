@@ -1,0 +1,48 @@
+/* -------------- Fonts -------------- */
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+}
+h1 {
+  text-align: center;
+}
+table th {
+  line-height: 22px;
+  text-align: left;
+  font-weight: 900;
+}
+table td {
+  line-height: 26px;
+}
+/* Full information details */
+.full-information-block th {
+  font-size: 0.735em;
+}
+.full-information-block td div h3 {
+  font-size: 0.835em;
+  text-align: center;
+}
+.full-information-block .consolidated-results > span.proceed {
+  font-size: 1.2em;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+.full-information-block .consolidated-results a {
+  font-weight: 900;
+  text-decoration: none;
+}
+.textual-chart-info {
+  text-align: center;
+}
+td > a {
+  transition: font 0.2s ease,
+              padding 0.8s linear;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+}
+td > a:hover {
+  font-weight: 900;
+  font-size: 1.1em;
+}

@@ -1,0 +1,120 @@
+<table summary="This table charts items and it's data.">
+<caption>Data table</caption>
+<thead>
+	<tr>
+		<th abbr="Type" scope="col">Changelist/Build</th>
+		<th scope="col">Owner</th>
+		<th scope="col">Time Started</th>
+		<th scope="col">State</th>
+		<th scope="col">Metrics</th>
+		<th scope="col" id="build-data">Build</th>
+		<th scope="col" id="unit-test-data">Unit Test</th>
+		<th scope="col" id="functional-test-data">Functional Test</th>
+	</tr>
+</thead>
+<!-- Grouping task with tbody -->
+<tbody ng-repeat="model in task.taskList" class="full-information-fade">
+	<tr class="{{ model.snapshot.state }}">
+		<td class="{{ model.type }}">
+			<a class="open-full-information">
+				{{ model.name }}
+			</a>
+		</td>
+	    <td>{{ model.owner }}</td>
+	    <td>{{ model.timestarted | date:'MM/dd/yyyy H:mm'}}</td>
+	    <td>{{ model.snapshot.state }}</td>
+	    <td>
+	    	<div class="progress-bar-wrapper {{ model.snapshot.metrics.state }}">
+	    		<progress-bar completion="{{ model.snapshot.metrics.completion }}">
+	    		</progress-bar> 
+	    	</div>
+		</td>
+	    <td>
+	    	<div class="progress-bar-wrapper {{ model.snapshot.metrics.state }}">
+	    		<progress-bar completion="{{ model.snapshot.metrics.completion }}">
+	    		</progress-bar> 
+	    	</div>
+		</td>
+	    <td>
+	    	<div class="progress-bar-wrapper {{ model.snapshot.unittest.state }}">
+	    		<progress-bar completion="{{ model.snapshot.unittest.completion }}">
+	    		</progress-bar>
+	    	</div>
+		</td>
+	    <td>
+	    	<div class="progress-bar-wrapper {{ model.snapshot.functionaltest.state }}">
+	    		<progress-bar completion="{{ model.snapshot.functionaltest.completion }}">
+	    		</progress-bar>
+	    	</div>
+		</td>
+	</tr>
+	<tr class="full-information-block">
+		<td colspan="8" headers="build-data unit-test-data functional-test-data">
+			<div class="metrics-clock">
+				<h3>Metrics</h3>
+				<metrics-detail-container 
+					testtotal="{{ model.snapshot.metrics.test.total }}"
+					teststate="{{ model.snapshot.metrics.test.perspective }}"
+					maintainabilitytotal="{{ model.snapshot.metrics.maintainability.total }}"
+					maintainabilitystate="{{ model.snapshot.metrics.maintainability.perspective }}"
+					securitytotal="{{ model.snapshot.metrics.security.total }}" 
+					securitystate="{{ model.snapshot.metrics.security.perspective }}" 
+					workmanshiptotal="{{ model.snapshot.workmanship.total }}" 
+					workmanshipstate="{{ model.snapshot.workmanship.perspective }}">
+				</metrics-detail-container>
+			</div>
+
+			<!-- Start build -->
+			 <div>
+    				<h3>Build</h3>
+    				<p class="build-box">
+    					<img src="images/server.png" />
+    					<span>Debug</span>
+    				</p>
+    				
+    				<p class="build-box">
+    					<img src="images/server.png" />
+    					<span>Release</span>
+    				</p>
+    		 </div>
+    		 <!-- end build -->
+
+    		 <!-- Unit tests -->
+    		<div class="increase" aria-describedby="tests-info-{{ model._id }}">
+    			<h3>Unit Tests</h3>
+				<!-- chart block -->
+				<div class="chart-block">
+					<chart-block 
+						objid="{{ model._id }}" 
+						codecovered="{{ model.snapshot.unittest.completion }}"
+						status="{{ model.snapshot.unittest.state }}"></chart-block>
+				</div>
+				<!-- chart block -->
+    		</div>
+    		<!-- End Unit tests -->
+
+    		 <!-- Functional tests -->
+    		<div class="increase" aria-describedby="tests-info-{{ model._id }}">
+    			<h3>Functional Tests</h3>
+				<!-- chart block -->
+				<div class="chart-block">
+					<chart-block 
+						objid="{{ model._id }}" 
+						codecovered="{{ model.snapshot.functionaltest.completion }}"
+						status="{{ model.snapshot.functionaltest.state }}"></chart-block>
+				</div>
+				<!-- chart block -->
+    		</div>
+    		<!-- Functional Unit tests -->
+
+			<!-- Consolidated -->
+			<div class="result-cointainer">
+				<h3>Result</h3>
+				<result-container status="{{ model.snapshot.state }}">
+				</result-container>
+			</div>
+			<!-- Consolidated -->
+		</td>
+	</tr>
+</tbody>
+</table>

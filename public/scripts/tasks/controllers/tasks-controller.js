@@ -18,7 +18,7 @@ function TasksController($scope, $http, $resource) {
 		var taskResource = $resource('v1/tasks');
 
 		taskResource.get(function(response) {
-			console.log(response.tasks);
+
 			me.taskList = response.tasks;
 		}, function(erro) {
 			console.log(erro);
